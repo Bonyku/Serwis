@@ -1,0 +1,11 @@
+<div class="product-wrapper">
+    <div [routerLink]="['product', product.id]" class="product-card">
+        <img [src]="product.imageUrl" class="product-image">
+        <div class="product-description">
+            <div class="product-title"> 
+                {{product.title}}
+            </div>
+            {{product.description}}
+        </div>
+    </div>
+</div>
