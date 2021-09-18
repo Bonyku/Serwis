@@ -15,7 +15,8 @@
     justify-content: center;
     align-items: center;
     background-color: $white;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     padding: 16px;
     cursor: pointer;
     @include laptop {
@@ -28,7 +29,7 @@
 
 .product-image {
     width: 100%;
-    max-width: 500px;
+    max-width: 300px;
     object-fit: scale-down;
     aspect-ratio: 16 / 10;
 }
@@ -38,7 +39,34 @@
 }
 
 .product-title {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     text-align: center;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.product-card-footer {
+    height: 40px;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s background-color ease;
+    &:hover {
+        background-color: $accent-dark;
+    }
+
+    span {
+        color: $primary-font;
+        font-size: 20px;
+        font-weight: 600;
+    }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { Observable, of } from 'rxjs';
 import { Product } from './models/product.model';
+import { CartService } from './services/cart.service';
 import { ProductService } from './services/product.service';
 
 @Component({
@@ -14,8 +16,13 @@ export class ShopComponent implements OnInit {
 
   public products$: Observable<Product[]>;
 
-  constructor(private productSrv: ProductService) { 
+  public itemsInCart: Observable<number>;
+  public valueOfCard: Observable<number>;
+
+  constructor(private productSrv: ProductService, private cartService: CartService) { 
     this.products$ = this.productSrv.getProducts();
+    this.itemsInCart = cartService.count();
+    this.valueOfCard = cartService.value();
   }
 
   ngOnInit(): void { }

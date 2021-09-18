@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { Product } from '../../models/product.model';
-import { ProductService } from '../../services/product.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -12,8 +12,17 @@ export class ProductComponent implements OnInit {
 
   @Input() product!: Product;
 
-  constructor() { }
+  constructor(private cart: CartService, private msgService: NzMessageService) { }
 
   ngOnInit(): void { }
+
+  public buy() {
+    this.msgService.info(`Dodano produkt ${this.product.title} do koszyka`)
+    this.cart.add(this.product);
+  }
+
+  public imageClick(event: MouseEvent): void  {
+    event.stopPropagation();
+  }
 
 }

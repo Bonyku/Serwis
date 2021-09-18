@@ -1,3 +1,11 @@
+<div class="product-top-bar">
+    <div class="cart-wrapper">
+        <nz-badge [nzCount]="(itemsInCart | async) || 0">
+            <i class="cart" nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+        </nz-badge> 
+        <span class="cart-value">{{ valueOfCard | async }} Zł </span>
+    </div>
+</div>
 <div class="product-search-wrapper">
     <div class="product-search-header">
         <input nz-input placeholder="Wyszukaj produkty" (change)="onType($event)" />

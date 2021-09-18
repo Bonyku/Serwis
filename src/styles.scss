@@ -13,6 +13,10 @@ body {
 .container {
     margin: 0 16px;
     @include laptop {
-        margin: 0 32px;
+        margin: 0 48px;
+    }
+    @include desktop {
+        margin: auto;
+        max-width: 1550px;
     }
 }

@@ -1,11 +1,10 @@
 <div class="product-wrapper">
     <div [routerLink]="['product', product.id]" class="product-card">
-        <img [src]="product.imageUrl" class="product-image">
+        <img (click)="imageClick($event)" nz-image [nzSrc]="product.imageUrl" class="product-image" nzPlaceholder="https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg">
         <div class="product-description">
-            <div class="product-title"> 
-                {{product.title}}
-            </div>
-            {{product.description}}
+            <div class="product-title"> {{product.title}} </div>
+            <div class="product-price"> {{product.price}} Zł </div>
         </div>
     </div>
+    <div (click)="buy()" class="product-card-footer"><span>Dodaj do koszyka</span></div>
 </div>
