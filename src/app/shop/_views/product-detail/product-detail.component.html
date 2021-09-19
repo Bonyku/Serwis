@@ -1,0 +1,11 @@
+<app-shop-top-bar></app-shop-top-bar>
+<ng-container *ngIf="product$ | async as product">
+  <div class="section main-card">
+    <div style="max-width: 700px; border-right: 1px solid gray">
+      <app-product-image [product]="product"></app-product-image>
+    </div>
+  </div>
+  <div class="section similar"></div>
+  <div class="section description"></div>
+  <div class="section specification"></div>
+</ng-container>

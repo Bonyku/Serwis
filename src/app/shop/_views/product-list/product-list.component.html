@@ -1,0 +1,18 @@
+<div class="product-search-wrapper">
+  <div class="product-search-header">
+    <input nz-input placeholder="Wyszukaj produkty" (change)="onType($event)" />
+  </div>
+  <div class="product-wrapper">
+    <div class="product-filter-wrapper">
+      <app-product-filters></app-product-filters>
+    </div>
+    <div class="product-list-wrapper">
+      <ng-container *ngIf="products$ | async as products">
+        <app-product-card
+          [product]="product"
+          *ngFor="let product of products"
+        ></app-product-card>
+      </ng-container>
+    </div>
+  </div>
+</div>

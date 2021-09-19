@@ -1,0 +1,8 @@
+<div class="shop-top-bar">
+  <div [routerLink]="['/shop', 'cart']" class="cart-wrapper">
+    <nz-badge [nzCount]="(itemsInCart | async) || 0">
+      <i class="cart" nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+    </nz-badge>
+    <span class="cart-value">{{ valueOfCard | async }} Zł </span>
+  </div>
+</div>

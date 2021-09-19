@@ -1,0 +1,16 @@
+<div class="product-wrapper">
+  <div [routerLink]="['product', product.id]" class="product-card">
+    <div class="product-card-content">
+      <div style="max-width: 300px">
+        <app-product-image [product]="product"></app-product-image>
+      </div>
+      <div class="product-description">
+        <div class="product-title">{{ product.title }}</div>
+        <div class="product-price">{{ product.price }} Zł</div>
+      </div>
+    </div>
+    <div (click)="buy($event)" class="product-card-footer">
+      <span>Dodaj do koszyka</span>
+    </div>
+  </div>
+</div>

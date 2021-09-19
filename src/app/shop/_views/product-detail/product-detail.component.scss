@@ -1,0 +1,9 @@
+@import "variables.scss";
+
+.section {
+  background-color: $white;
+  border-radius: 8px;
+  min-height: 200px;
+  width: 100%;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,20 @@
+<ng-container *ngIf="priceRange$ | async as priceRange">
+  Cena
+  <nz-slider
+    [nzMin]="priceRange.start"
+    [nzMax]="priceRange.end"
+    nzRange
+  ></nz-slider>
+</ng-container>
+
+Kategoria
+<ng-container *ngIf="productCategories$ | async as categories">
+  <nz-select>
+    <nz-option
+      *ngFor="let category of categories"
+      [nzLabel]="category"
+      [nzValue]="category"
+    >
+    </nz-option>
+  </nz-select>
+</ng-container>

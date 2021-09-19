@@ -1,15 +1,10 @@
 <div class="navbar">
-  <img [routerLink]="['home']" class="navbar-logo">
+  <img [routerLink]="['home']" class="navbar-logo" />
   <ul class="navbar-list">
-    <li [routerLink]="['shop']" class="navbar-item">
-      Sklep
-    </li>
-    <li [routerLink]="['service']" class="navbar-item">
-      Serwis
-    </li>
+    <li [routerLink]="['shop']" class="navbar-item">Sklep</li>
+    <li [routerLink]="['service']" class="navbar-item">Serwis</li>
   </ul>
 </div>
 <div class="container">
-
   <router-outlet></router-outlet>
 </div>
